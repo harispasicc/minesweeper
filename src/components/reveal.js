@@ -3,8 +3,6 @@ function revealed(arr, x, y, newNonMinesCount) {
     return arr;
   }
 
-  //stack of all the cells which we
-  //would like to reveal or flip
   let flipped = [];
   flipped.push(arr[x][y]);
   while (flipped.length !== 0) {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Cell from "./Cell";
-import createBoard from "./createBoard";
+import createBoard from "./CreateBoard";
 import Win from "./Win";
 import Lost from "./Lost";
-import revealed from "./reveal";
+import revealed from "./Reveal";
 import StartGame from "./StartGame";
 
 function Board() {
@@ -16,11 +16,9 @@ function Board() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    //calling function
     freshBoard();
   }, []);
 
-  //creating board
   function freshBoard() {
     const newBoard = createBoard(8, 8, 10);
     setNonMineCount(8 * 8 - 10);
@@ -39,9 +37,7 @@ function Board() {
     setMine(10);
   };
 
-  //on right click or flag
   const updateFlag = (x, y) => {
-    //deep copy of state
     let newGrid = JSON.parse(JSON.stringify(grid));
     newGrid[x][y].flagged = !newGrid[x][y].flagged;
     if (newGrid[x][y].flagged && mine >= 1) {
@@ -54,7 +50,6 @@ function Board() {
     setGrid(newGrid);
   };
 
-  //reveal cell
   const revealCell = (x, y) => {
     if (grid[x][y].revealed || gameOver || gameLost) {
       return;

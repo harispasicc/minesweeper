@@ -1,3 +1,24 @@
+Minesweeper
+
+Project description:
+
+Minesweeper is a single-player puzzle video game and one of the most popular games, challenging users around the globe to expose all the open areas on the board without hitting bombs for decades. To hit a bomb means to click on it. The player is first presented With a grid containing a number of indistinguishable squares containing a number of pre-specified mines. The number of mines and the size of the grid is decided by the user by selecting a particular difficulty level, according to which a grid
+of specified size and number of mines is displayed (the developer generally prespecifes the grid size for each difficulty level) For this project, only one level is expatted to be implemented, containing a 8 x3
+board and 64 positions
+
+Project features:
+-Board.js: contains grid of the board, mines, win/lost,
+-Cell.js: contains cell details such as bomb, flag, colors, reveal
+-CreateBoard.js: creating board and making random numbers,
+-Lost.js: lost logic,
+-reveal.js: statements for revealing,
+-StartGame.js: start game page, first page,
+-Win.js: win logic,
+-App.js: imported board,
+-index.js: style of the project
+
+Built with: HTML, CSS, JS, ReactJS
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
