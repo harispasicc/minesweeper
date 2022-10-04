@@ -3,7 +3,7 @@ import Cell from "./Cell";
 import CreateBoard from "./CreateBoard";
 import Win from "./Win";
 import Lost from "./Lost";
-import revealed from "./Reveal";
+import Revealed from "./Reveal";
 import StartGame from "./StartGame";
 
 function Board() {
@@ -51,21 +51,21 @@ function Board() {
   };
 
   const revealCell = (x, y) => {
-    if (grid[x][y].revealed || gameOver || gameLost) {
+    if (grid[x][y].Revealed || gameOver || gameLost) {
       return;
     }
     let newGrid = JSON.parse(JSON.stringify(grid));
     if (newGrid[x][y].value === "X") {
       for (let i = 0; i < mineLocation.length; i++) {
-        newGrid[mineLocation[i][0]][mineLocation[i][1]].revealed = true;
+        newGrid[mineLocation[i][0]][mineLocation[i][1]].Revealed = true;
       }
       setGrid(newGrid);
       setGameLost(true);
     } else {
-      let newrevealedBoard = revealed(newGrid, x, y, nonMineCount);
-      setGrid(newrevealedBoard.arr);
-      setNonMineCount(newrevealedBoard.newNonMinesCount);
-      if (newrevealedBoard.newNonMinesCount === 0) {
+      let newRevealedBoard = Revealed(newGrid, x, y, nonMineCount);
+      setGrid(newRevealedBoard.arr);
+      setNonMineCount(newRevealedBoard.newNonMinesCount);
+      if (newRevealedBoard.newNonMinesCount === 0) {
         setGameOver(true);
       }
     }

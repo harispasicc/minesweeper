@@ -1,5 +1,5 @@
 function Revealed(arr, x, y, newNonMinesCount) {
-  if (arr[x][y].revealed) {
+  if (arr[x][y].Revealed) {
     return arr;
   }
 
@@ -8,9 +8,9 @@ function Revealed(arr, x, y, newNonMinesCount) {
   while (flipped.length !== 0) {
     let single = flipped.pop();
 
-    if (!single.revealed) {
+    if (!single.Revealed) {
       newNonMinesCount--;
-      single.revealed = true;
+      single.Revealed = true;
     }
 
     if (single.value !== 0) {
@@ -21,7 +21,7 @@ function Revealed(arr, x, y, newNonMinesCount) {
       single.x > 0 &&
       single.y > 0 &&
       arr[single.x - 1][single.y - 1].value === 0 &&
-      !arr[single.x - 1][single.y - 1].revealed
+      !arr[single.x - 1][single.y - 1].Revealed
     ) {
       flipped.push(arr[single.x - 1][single.y - 1]);
     }
@@ -29,7 +29,7 @@ function Revealed(arr, x, y, newNonMinesCount) {
       single.x < arr.length - 1 &&
       single.y < arr[0].length - 1 &&
       arr[single.x + 1][single.y + 1].value === 0 &&
-      !arr[single.x + 1][single.y + 1].revealed
+      !arr[single.x + 1][single.y + 1].Revealed
     ) {
       flipped.push(arr[single.x + 1][single.y + 1]);
     }
@@ -37,7 +37,7 @@ function Revealed(arr, x, y, newNonMinesCount) {
       single.x < arr.length - 1 &&
       single.y > 0 &&
       arr[single.x + 1][single.y - 1].value === 0 &&
-      !arr[single.x + 1][single.y - 1].revealed
+      !arr[single.x + 1][single.y - 1].Revealed
     ) {
       flipped.push(arr[single.x + 1][single.y - 1]);
     }
@@ -45,7 +45,7 @@ function Revealed(arr, x, y, newNonMinesCount) {
       single.x > 0 &&
       single.y < arr[0].length - 1 &&
       arr[single.x - 1][single.y + 1].value === 0 &&
-      !arr[single.x - 1][single.y + 1].revealed
+      !arr[single.x - 1][single.y + 1].Revealed
     ) {
       flipped.push(arr[single.x - 1][single.y + 1]);
     }
@@ -53,28 +53,28 @@ function Revealed(arr, x, y, newNonMinesCount) {
     if (
       single.x > 0 &&
       arr[single.x - 1][single.y].value === 0 &&
-      !arr[single.x - 1][single.y].revealed
+      !arr[single.x - 1][single.y].Revealed
     ) {
       flipped.push(arr[single.x - 1][single.y]);
     }
     if (
       single.x < arr.length - 1 &&
       arr[single.x + 1][single.y].value === 0 &&
-      !arr[single.x + 1][single.y].revealed
+      !arr[single.x + 1][single.y].Revealed
     ) {
       flipped.push(arr[single.x + 1][single.y]);
     }
     if (
       single.y > 0 &&
       arr[single.x][single.y - 1].value === 0 &&
-      !arr[single.x][single.y - 1].revealed
+      !arr[single.x][single.y - 1].Revealed
     ) {
       flipped.push(arr[single.x][single.y - 1]);
     }
     if (
       single.y < arr[0].length - 1 &&
       arr[single.x][single.y + 1].value === 0 &&
-      !arr[single.x][single.y + 1].revealed
+      !arr[single.x][single.y + 1].Revealed
     ) {
       flipped.push(arr[single.x][single.y + 1]);
     }
@@ -82,56 +82,56 @@ function Revealed(arr, x, y, newNonMinesCount) {
     if (
       single.x > 0 &&
       single.y > 0 &&
-      !arr[single.x - 1][single.y - 1].revealed
+      !arr[single.x - 1][single.y - 1].Revealed
     ) {
-      arr[single.x - 1][single.y - 1].revealed = true;
+      arr[single.x - 1][single.y - 1].Revealed = true;
       newNonMinesCount--;
     }
 
-    if (single.y > 0 && !arr[single.x][single.y - 1].revealed) {
-      arr[single.x][single.y - 1].revealed = true;
+    if (single.y > 0 && !arr[single.x][single.y - 1].Revealed) {
+      arr[single.x][single.y - 1].Revealed = true;
       newNonMinesCount--;
     }
 
     if (
       single.x < arr.length - 1 &&
       single.y > 0 &&
-      !arr[single.x + 1][single.y - 1].revealed
+      !arr[single.x + 1][single.y - 1].Revealed
     ) {
-      arr[single.x + 1][single.y - 1].revealed = true;
+      arr[single.x + 1][single.y - 1].Revealed = true;
       newNonMinesCount--;
     }
 
-    if (single.x > 0 && !arr[single.x - 1][single.y].revealed) {
-      arr[single.x - 1][single.y].revealed = true;
+    if (single.x > 0 && !arr[single.x - 1][single.y].Revealed) {
+      arr[single.x - 1][single.y].Revealed = true;
       newNonMinesCount--;
     }
 
-    if (single.x < arr.length - 1 && !arr[single.x + 1][single.y].revealed) {
-      arr[single.x + 1][single.y].revealed = true;
+    if (single.x < arr.length - 1 && !arr[single.x + 1][single.y].Revealed) {
+      arr[single.x + 1][single.y].Revealed = true;
       newNonMinesCount--;
     }
 
     if (
       single.x > 0 &&
       single.y < arr[0].length - 1 &&
-      !arr[single.x - 1][single.y + 1].revealed
+      !arr[single.x - 1][single.y + 1].Revealed
     ) {
-      arr[single.x - 1][single.y + 1].revealed = true;
+      arr[single.x - 1][single.y + 1].Revealed = true;
       newNonMinesCount--;
     }
 
-    if (single.y < arr[0].length - 1 && !arr[single.x][single.y + 1].revealed) {
-      arr[single.x][single.y + 1].revealed = true;
+    if (single.y < arr[0].length - 1 && !arr[single.x][single.y + 1].Revealed) {
+      arr[single.x][single.y + 1].Revealed = true;
       newNonMinesCount--;
     }
 
     if (
       single.x < arr.length - 1 &&
       single.y < arr[0].length - 1 &&
-      !arr[single.x + 1][single.y + 1].revealed
+      !arr[single.x + 1][single.y + 1].Revealed
     ) {
-      arr[single.x + 1][single.y + 1].revealed = true;
+      arr[single.x + 1][single.y + 1].Revealed = true;
       newNonMinesCount--;
     }
   }

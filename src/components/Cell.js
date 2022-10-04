@@ -19,15 +19,15 @@ function Cell({ details, updateFlag, revealCell }) {
       onClick={() => onClickUpdate()}
       className="cell"
       style={{
-        background: details.revealed
+        background: details.Revealed
           ? details.value === "X"
           : bombChexPattern(details.x, details.y),
         color: numCode(details.value),
       }}
     >
-      {!details.revealed && details.flagged
+      {!details.Revealed && details.flagged
         ? "🚩"
-        : details.revealed && details.value !== 0
+        : details.Revealed && details.value !== 0
         ? details.value === "X"
           ? "💣"
           : details.value

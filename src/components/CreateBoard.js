@@ -7,7 +7,7 @@ function CreateBoard(row, col, bombs) {
     for (let y = 0; y < col; y++) {
       subCol.push({
         value: 0,
-        revealed: false,
+        Revealed: false,
         x: x,
         y: y,
         flagged: false,
