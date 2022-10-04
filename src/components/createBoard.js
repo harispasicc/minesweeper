@@ -1,4 +1,4 @@
-function createBoard(row, col, bombs) {
+function CreateBoard(row, col, bombs) {
   let board = [];
   let mineLocation = [];
 
@@ -86,4 +86,4 @@ function randomNum(min = 0, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export default createBoard;
+export default CreateBoard;

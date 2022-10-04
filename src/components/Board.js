@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Cell from "./Cell";
-import createBoard from "./CreateBoard";
+import CreateBoard from "./CreateBoard";
 import Win from "./Win";
 import Lost from "./Lost";
 import revealed from "./Reveal";
@@ -20,7 +20,7 @@ function Board() {
   }, []);
 
   function freshBoard() {
-    const newBoard = createBoard(8, 8, 10);
+    const newBoard = CreateBoard(8, 8, 10);
     setNonMineCount(8 * 8 - 10);
     setMineLocation(newBoard.mineLocation);
     setGrid(newBoard.board);
@@ -62,10 +62,10 @@ function Board() {
       setGrid(newGrid);
       setGameLost(true);
     } else {
-      let newRevealedBoard = revealed(newGrid, x, y, nonMineCount);
-      setGrid(newRevealedBoard.arr);
-      setNonMineCount(newRevealedBoard.newNonMinesCount);
-      if (newRevealedBoard.newNonMinesCount === 0) {
+      let newrevealedBoard = revealed(newGrid, x, y, nonMineCount);
+      setGrid(newrevealedBoard.arr);
+      setNonMineCount(newrevealedBoard.newNonMinesCount);
+      if (newrevealedBoard.newNonMinesCount === 0) {
         setGameOver(true);
       }
     }

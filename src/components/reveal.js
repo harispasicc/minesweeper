@@ -1,4 +1,4 @@
-function revealed(arr, x, y, newNonMinesCount) {
+function Revealed(arr, x, y, newNonMinesCount) {
   if (arr[x][y].revealed) {
     return arr;
   }
@@ -138,4 +138,4 @@ function revealed(arr, x, y, newNonMinesCount) {
   return { arr, newNonMinesCount };
 }
 
-export default revealed;
+export default Revealed;
